@@ -5,12 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --maroon: #4a1e2b;
-  --maroon-dark: #38151e;
-  --blush: #f7e0de;
-  --blush-light: #fdf2f0;
-  --rose: #e8a3a8;
-  --rose-light: #f6d7d3;
+  --maroon: #221116;
+  --maroon-dark: #120a0d;
+  --blush: #f8dcda;
+  --blush-light: #fdf1ef;
+  --rose: #e2818c;
+  --rose-light: #f6d3ce;
+  --rose-deep: #c1616d;
+  --rose-deep-dark: #a44e59;
   --cream: #fffaf8;
   --white: #ffffff;
   --text-dark: #3a2530;
@@ -91,14 +93,14 @@ select:focus-visible {
 }
 .btn:active { transform: translateY(0) scale(0.98); }
 .btn-primary {
-  background: var(--maroon);
+  background: var(--rose-deep);
   color: var(--white);
-  box-shadow: 0 2px 10px rgba(74, 30, 43, 0.12);
+  box-shadow: 0 2px 10px rgba(193, 97, 109, 0.25);
 }
 .btn-primary:hover {
-  background: var(--maroon-dark);
+  background: var(--rose-deep-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(74, 30, 43, 0.28);
+  box-shadow: 0 10px 24px rgba(193, 97, 109, 0.38);
 }
 .btn-secondary {
   background: var(--blush);
@@ -145,8 +147,11 @@ select:focus-visible {
   font-weight: 700;
   font-size: 1.3rem;
   color: var(--maroon);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
   transition: opacity 0.15s ease;
 }
+.logo .accent { letter-spacing: -0.01em; }
 .logo:hover { opacity: 0.75; }
 .logo .logo-mark {
   width: 38px;
@@ -720,6 +725,8 @@ section { padding: 90px 0; }
   color: var(--maroon);
   font-size: 2.6rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 .story-image .wordmark span { color: var(--rose); }
 .story-image .wordmark small {
