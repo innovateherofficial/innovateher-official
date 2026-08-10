@@ -1,40 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About InnovateHER</title>
-<meta name="description" content="A girls-led national community building confidence, friendship, and leadership — one workshop at a time.">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — InnovateHER</title>
+  <meta name="description" content="InnovateHER is a girls-led national community building confidence, friendship, and leadership — one workshop at a time.">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <nav class="nav wrap">
-    <a href="index.html" class="logo"><span class="logo-mark">✦</span>Innovate<span class="accent">HER</span></a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
-      <li><a href="about.html" aria-current="page">About</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="get-involved.html">Get Involved</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="get-involved.html" class="btn btn-primary">Join the movement</a>
-    </div>
-  </nav>
-</header>
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">
+          <img src="assets/images/logo.png" alt="" onerror="this.parentElement.style.display='none'">
+        </span>
+        Innovate<span class="her">HER</span>
+      </a>
 
-<main>
+      <ul class="nav-links">
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="get-involved.html">Get Involved</a></li>
+        <li class="nav-cta-mobile"><a href="get-involved.html" class="btn btn-primary btn-block">Join the movement</a></li>
+      </ul>
 
-  <section class="page-hero">
-    <div class="wrap">
-      <span class="eyebrow">About Us</span>
-      <h1>We exist so that <em>she</em> never wonders if STEM is for her.</h1>
-      <p class="lede">A girls-led national community building confidence, friendship, and leadership — one workshop at a time.</p>
-      <div class="breadcrumb">
-        <a href="index.html">Home</a> <span>›</span> <span class="current">About</span>
+      <div class="nav-actions">
+        <a href="get-involved.html" class="btn btn-primary">Join the movement</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">About Us</span>
+        <h1>We exist so that <em>she</em> never wonders if STEM is for her.</h1>
+        <p>A girls-led national community building confidence, friendship, and leadership — one workshop at a time.</p>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>&rsaquo;</span>
+          <span class="current">About</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ OUR STORY ============ -->
+    <section class="section">
+      <div class="container story-block">
+        <div class="story-media">
+          <div class="wordmark">
+            Innovate<span class="her">HER</span>
+            <span class="tagline">OFFICIAL</span>
+          </div>
+        </div>
+
+        <div class="story-copy">
+          <span class="section-eyebrow">Our Story</span>
+          <h2 class="section-heading">Our story</h2>
+          <p>InnovateHER is a girls-led community dedicated to empowering young women nationwide to lead, create, and innovate with confidence. We believe every girl deserves access to opportunity, mentorship, and a space where her voice is valued and heard.</p>
+          <p>Through workshops, collaborative events, leadership initiatives, and meaningful conversations, we're building more than just a program — we're building a movement. A movement where girls support girls, ideas turn into action, and leadership starts now.</p>
+          <p>Whether you're passionate about STEM, business, advocacy, the arts — or you're still figuring it out — you belong here. At InnovateHER, we don't just talk about the future. We build it. Together.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEADERSHIP ============ -->
+    <section class="section bg-blush">
+      <div class="container text-center">
+        <span class="section-eyebrow">Leadership</span>
+        <h2 class="section-heading">The team behind the work.</h2>
+
+        <div class="leadership-grid">
+          <!-- Yasmine Saloum -->
+          <div class="leader-card">
+            <div class="leader-photo">Coming soon</div>
+            <h3>Yasmine Saloum</h3>
+            <p class="role">Founder / President</p>
+          </div>
+
+          <!-- Aanya Rao -->
+          <div class="leader-card clickable" data-modal-target="modal-aanya" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="leader-photo">
+              <img src="assets/images/team-aanya.jpg" alt="" onerror="this.parentElement.textContent='Photo'">
+            </div>
+            <h3>Aanya Rao</h3>
+            <p class="role">Vice President (Chief Operating Officer)</p>
+          </div>
+
+          <!-- Director of Operations -->
+          <div class="leader-card clickable" data-modal-target="modal-operations" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="leader-photo open-position">Open position</div>
+            <h3>Director of Operations</h3>
+            <p class="cta-hint">Click to learn more</p>
+          </div>
+
+          <!-- Samantha Moreta -->
+          <div class="leader-card">
+            <div class="leader-photo">Coming soon</div>
+            <h3>Samantha Moreta</h3>
+            <p class="role">Director of Social Media &amp; Marketing</p>
+          </div>
+
+          <!-- Director of Outreach & Partnerships -->
+          <div class="leader-card clickable" data-modal-target="modal-outreach" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="leader-photo open-position">Open position</div>
+            <h3>Director of Outreach &amp; Partnerships</h3>
+            <p class="cta-hint">Click to learn more</p>
+          </div>
+
+          <!-- Director of Legal Affairs & Compliance -->
+          <div class="leader-card clickable" data-modal-target="modal-legal" tabindex="0" role="button" aria-haspopup="dialog">
+            <div class="leader-photo open-position">Open position</div>
+            <h3>Director of Legal Affairs &amp; Compliance</h3>
+            <p class="cta-hint">Click to learn more</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WANT TO KNOW MORE ============ -->
+    <section class="section">
+      <div class="container know-more">
+        <h2>Want to know more?</h2>
+        <div class="actions">
+          <a href="get-involved.html" class="btn btn-primary">Get involved</a>
+          <a href="mailto:innovateheroffcl@gmail.com" class="btn btn-secondary">Email us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <span class="logo-mark">
+              <img src="assets/images/logo.png" alt="" onerror="this.parentElement.style.display='none'">
+            </span>
+            Innovate<span class="her">HER</span>
+          </a>
+          <p>A girls-led national community empowering young women to lead, create, and innovate with confidence.</p>
+          <div class="social-links">
+            <a href="#" aria-label="InnovateHER on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="InnovateHER on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="InnovateHER on YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="get-involved.html">Get involved</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:innovateheroffcl@gmail.com">innovateheroffcl@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 InnovateHER. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ MODALS ============ -->
+  <div class="modal-overlay" id="modal-aanya" role="dialog" aria-modal="true" aria-labelledby="modal-aanya-title">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-aanya-title">Aanya Rao</h3>
+      <p class="role">Vice President (Chief Operating Officer)</p>
+      <p>Hey! My name is Aanya Rao and I live in North Carolina. I've been interested in science ever since I was a kid, especially outerspace. I hope to become a future astrophysicist that researches explanation, blackholes, dark matter and more! I am so fortunate to be in a school with lots of opportunities and programs, and I want to spread these resources to girls everywhere!</p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-operations" role="dialog" aria-modal="true" aria-labelledby="modal-operations-title">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-operations-title">Director of Operations</h3>
+      <p>This position is currently open. Here's what this role involves:</p>
+      <ul>
+        <li>Organizes and manages all chapter systems</li>
+        <li>Tracks chapter progress, meetings, and performance</li>
+        <li>Ensures consistency across all locations</li>
+        <li>Develops internal systems and workflows</li>
+      </ul>
+      <a href="get-involved.html" class="btn btn-primary">Apply for this role</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-outreach" role="dialog" aria-modal="true" aria-labelledby="modal-outreach-title">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-outreach-title">Director of Outreach &amp; Partnerships</h3>
+      <p>This position is currently open. Here's what this role involves:</p>
+      <ul>
+        <li>Builds relationships with schools, sponsors, and partner organizations</li>
+        <li>Leads outreach efforts to grow chapters nationwide</li>
+        <li>Represents InnovateHER at community and partner events</li>
+        <li>Develops sponsorship and collaboration opportunities</li>
+      </ul>
+      <a href="get-involved.html" class="btn btn-primary">Apply for this role</a>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-legal" role="dialog" aria-modal="true" aria-labelledby="modal-legal-title">
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <h3 id="modal-legal-title">Director of Legal Affairs &amp; Compliance</h3>
+      <p>This position is currently open. Here's what this role involves:</p>
+      <ul>
+        <li>Researches legal requirements for growth and nonprofit status</li>
+        <li>Develops policies and organizational guidelines</li>
+        <li>Helps prepare for future 501(c)(3) registration</li>
+        <li>Ensures ethical and responsible operations</li>
+      </ul>
+      <a href="get-involved.html" class="btn btn-primary">Apply for this role</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>      </div>
     </div>
   </section>
 
