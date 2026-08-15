@@ -12,8 +12,8 @@
   --maroon: #4d1628;
   --maroon-dark: #37101d;
   --maroon-deep: #571a2d;
-  --pink-accent: #d98a98;
-  --pink-accent-dark: #c96e80;
+  --pink-accent: #d6a0a9;
+  --pink-accent-dark: #c17f8a;
 
   /* Backgrounds */
   --blush: #fadee5;
@@ -1061,6 +1061,18 @@ textarea:focus-visible {
 }
 
 .event-card-link {
+  display: block;
+}
+
+.empty-state {
+  display: none;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  padding: 40px 20px;
+}
+
+.empty-state.show {
   display: block;
 }
 
