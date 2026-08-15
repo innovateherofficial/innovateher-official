@@ -1,6 +1,10 @@
 /* =========================================================
    InnovateHER — Main JS
-   Mobile nav, tab switching, modals, event filters, forms
+   Mobile nav, modals, form success states.
+   Note: tab switching (Resources, Get Involved) and the events
+   category filter are handled in pure CSS via radio inputs —
+   see the ":checked" rules in style.css — so they keep working
+   even if this script fails to load.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -35,6 +39,70 @@ document.addEventListener('DOMContentLoaded', function () {
       openModalFromTrigger(trigger);
     });
     trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModalFromTrigger(trigger);
+      }
+    });
+  });
+
+  function openModalFromTrigger(trigger) {
+    var targetId = trigger.getAttribute('data-modal-target');
+    var modal = document.getElementById(targetId);
+    if (modal) {
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  modalOverlays.forEach(function (overlay) {
+    var closeBtn = overlay.querySelector('.modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        closeModal(overlay);
+      });
+    }
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) {
+        closeModal(overlay);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      modalOverlays.forEach(function (overlay) {
+        if (overlay.classList.contains('open')) {
+          closeModal(overlay);
+        }
+      });
+    }
+  });
+
+  function closeModal(overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ---------- Newsletter + contact forms: lightweight success state ----------
+     These forms are static-site placeholders. Hook up your form backend of
+     choice (e.g. Formspree, Netlify Forms, Google Forms) by giving the
+     <form> a real "action" attribute — this handler just gives visual
+     feedback so the flow feels complete in the meantime. ---------- */
+  var demoForms = document.querySelectorAll('[data-demo-form]');
+
+  demoForms.forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var successEl = form.querySelector('.form-success');
+      if (successEl) {
+        successEl.classList.add('show');
+      }
+      form.reset();
+    });
+  });
+
+});    trigger.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         openModalFromTrigger(trigger);
