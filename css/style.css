@@ -962,6 +962,20 @@ textarea:focus-visible {
 }
 
 /* ---------- Events listing ---------- */
+
+/* Hide the radio inputs that drive filtering — labels below are the visible control */
+input.tab-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .filter-tabs {
   display: flex;
   gap: 10px;
@@ -970,6 +984,7 @@ textarea:focus-visible {
 }
 
 .filter-tab {
+  display: inline-flex;
   padding: 12px 22px;
   border-radius: var(--radius-pill);
   border: 1.5px solid var(--border-card);
@@ -977,11 +992,20 @@ textarea:focus-visible {
   color: var(--text-body);
   font-weight: 600;
   font-size: 14px;
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
-.filter-tab.active,
 .filter-tab:hover {
+  border-color: var(--maroon);
+}
+
+/* Active filter label styling, driven by which radio is checked */
+#filter-all:checked ~ .filter-tabs label[for="filter-all"],
+#filter-workshop:checked ~ .filter-tabs label[for="filter-workshop"],
+#filter-info-session:checked ~ .filter-tabs label[for="filter-info-session"],
+#filter-conference:checked ~ .filter-tabs label[for="filter-conference"],
+#filter-showcase:checked ~ .filter-tabs label[for="filter-showcase"] {
   background: var(--maroon);
   border-color: var(--maroon);
   color: var(--white);
@@ -991,6 +1015,39 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
+}
+
+/* Card visibility driven by which filter radio is checked.
+   "All" shows every card; each other filter shows only matching data-event-category cards. */
+.event-card-link {
+  display: none;
+}
+
+#filter-all:checked ~ .events-grid .event-card-link {
+  display: block;
+}
+
+#filter-workshop:checked ~ .events-grid .event-card-link[data-event-category="workshop"],
+#filter-info-session:checked ~ .events-grid .event-card-link[data-event-category="info-session"],
+#filter-conference:checked ~ .events-grid .event-card-link[data-event-category="conference"],
+#filter-showcase:checked ~ .events-grid .event-card-link[data-event-category="showcase"] {
+  display: block;
+}
+
+/* Events empty state — shown for any filter with zero matching cards right now.
+   When you add a card for a category below, delete that filter's line here. */
+.empty-state {
+  display: none;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  padding: 40px 20px;
+}
+
+#filter-info-session:checked ~ .empty-state,
+#filter-conference:checked ~ .empty-state,
+#filter-showcase:checked ~ .empty-state {
+  display: block;
 }
 
 .event-card {
@@ -1058,22 +1115,6 @@ textarea:focus-visible {
 .event-meta .meta-row svg {
   color: var(--pink-accent-dark);
   flex-shrink: 0;
-}
-
-.event-card-link {
-  display: block;
-}
-
-.empty-state {
-  display: none;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 16px;
-  padding: 40px 20px;
-}
-
-.empty-state.show {
-  display: block;
 }
 
 /* ---------- Event detail page ---------- */
@@ -1240,6 +1281,7 @@ textarea:focus-visible {
   border-radius: var(--radius-md);
   padding: 20px;
   text-align: left;
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
@@ -1267,12 +1309,15 @@ textarea:focus-visible {
   color: var(--text-muted);
 }
 
-.involve-tab.active {
+/* Active tab + panel styling, driven by which radio is checked */
+#tab-questions:checked ~ .involve-left .involve-tabs label[for="tab-questions"],
+#tab-chapter:checked ~ .involve-left .involve-tabs label[for="tab-chapter"] {
   border-color: var(--maroon);
   background: var(--blush-soft);
 }
 
-.involve-tab.active .icon {
+#tab-questions:checked ~ .involve-left .involve-tabs label[for="tab-questions"] .icon,
+#tab-chapter:checked ~ .involve-left .involve-tabs label[for="tab-chapter"] .icon {
   background: var(--maroon);
   color: var(--blush);
 }
@@ -1286,7 +1331,8 @@ textarea:focus-visible {
   display: none;
 }
 
-.involve-panel.active {
+#tab-questions:checked ~ .involve-right #panel-questions,
+#tab-chapter:checked ~ .involve-right #panel-chapter {
   display: block;
 }
 
@@ -1374,6 +1420,7 @@ textarea:focus-visible {
 
 .resource-tab {
   flex: 1;
+  text-align: center;
   padding: 14px 24px;
   border-radius: var(--radius-pill);
   border: none;
@@ -1381,10 +1428,14 @@ textarea:focus-visible {
   color: var(--maroon);
   font-weight: 600;
   font-size: 15px;
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
-.resource-tab.active {
+/* Active tab + panel styling, driven by which radio is checked */
+#tab-elementary:checked ~ .resource-tabs label[for="tab-elementary"],
+#tab-intermediate:checked ~ .resource-tabs label[for="tab-intermediate"],
+#tab-highschool:checked ~ .resource-tabs label[for="tab-highschool"] {
   background: var(--maroon);
   color: var(--white);
 }
@@ -1393,7 +1444,9 @@ textarea:focus-visible {
   display: none;
 }
 
-.resource-panel.active {
+#tab-elementary:checked ~ #panel-elementary,
+#tab-intermediate:checked ~ #panel-intermediate,
+#tab-highschool:checked ~ #panel-highschool {
   display: block;
 }
 
