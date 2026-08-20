@@ -634,14 +634,20 @@ textarea:focus-visible {
 .newsletter-form input[type="email"]::placeholder {
   color: rgba(253, 238, 241, 0.6);
 }
-
-.newsletter-form button {
+.newsletter-form button[type="submit"] {
+  flex: 0 0 auto;
+  width: auto;
+  display: inline-block;
   padding: 15px 30px;
-  border-radius: var(--radius-pill);
+  border-radius: 999px;
   border: none;
-  background: var(--blush);
-  color: var(--maroon);
+  background: #fadee5;
+  color: #4d1628;
   font-weight: 600;
+  font-size: 15px;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
   transition: background 0.15s ease, transform 0.15s ease;
 }
 
