@@ -31,8 +31,8 @@
       color: inherit;
     }
     .leader-circle {
-      width: 200px;
-      height: 200px;
+      width: min(320px, 70vw);
+      height: min(320px, 70vw);
       border-radius: 50%;
       background: #fff;
       border: 3px solid #e8b4c8;
@@ -52,7 +52,15 @@
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
     }
     .leader-circle-wrap:focus-visible { outline: 3px solid #e8b4c8; outline-offset: 8px; border-radius: 12px; }
-    .leader-circle-wrap h3 { margin: 0; font-size: 1.25rem; }
+    .leader-circle-wrap h3 { margin: 0; font-size: 1.4rem; }
+    .leader-circle-wrap .leader-role {
+      margin-top: -8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #b0527a;
+    }
 
     /* Popup */
     dialog.leader-dialog {
@@ -148,7 +156,6 @@
     <section class="section bg-blush">
       <div class="container text-center">
         <span class="section-eyebrow">Leadership</span>
-        <h2 class="section-heading">The team behind the work.</h2>
 
         <div class="leaders-duo">
           <!-- Yasmine Saloum (left) -->
@@ -158,6 +165,7 @@
               Coming soon
             </span>
             <h3>Yasmine Saloum</h3>
+            <span class="leader-role">Co-Founder</span>
           </button>
 
           <!-- Samantha Moreta (right) -->
@@ -167,6 +175,7 @@
               Coming soon
             </span>
             <h3>Samantha Moreta</h3>
+            <span class="leader-role">Co-Founder</span>
           </button>
         </div>
       </div>
